@@ -39,7 +39,7 @@ void pop(){
     temp = head;
     head = head->next;
 
-    free(head);
+    free(temp);
 
 }
 
