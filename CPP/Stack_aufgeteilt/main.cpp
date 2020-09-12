@@ -3,7 +3,7 @@
 
 int main()
 {
-    stack_t entity;
+    stack_t <float> entity;
 
     entity.push(1.0);
     entity.push(2.0);
@@ -12,20 +12,18 @@ int main()
 
     entity.print();
 
-    
-
     //entity.pop();
     //entity.print();
 
     entity.~stack_t();
 
-    cout << entity.top() << endl;
+    std::cout << entity.top() << std::endl;
 
     entity.pop();
 
     entity.print();
 
-    cout << "Skrr!" << endl;
+    std::cout << "Skrr!" << std::endl;
 
     return 0;
 }
