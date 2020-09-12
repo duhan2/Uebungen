@@ -1,6 +1,8 @@
 #include "h_stack_t.h"
 
-bool stack_t::isEmpty() {
+template<class T>
+
+bool stack_t<T>::isEmpty() {
     if (head == NULL) {
         return true;
     }
@@ -9,7 +11,9 @@ bool stack_t::isEmpty() {
     }
 }
 
-void stack_t::push(float value) {
+template<class T>
+
+void stack_t<T>::push(T value) {
 
     stack_t* element = new stack_t;
     element->value = value;
@@ -28,17 +32,20 @@ void stack_t::push(float value) {
     temp->next = element;
 }
 
-void stack_t::print() {
+template<class T>
+
+void stack_t<T>::print() {
     stack_t* temp = head;
     while (temp != NULL) {
 
-        cout << temp->value << endl;
+        std::cout << temp->value << std::endl;
         temp = temp->next;
 
     }
 }
 
-float stack_t::top() {
+template<class T>
+ T stack_t<T>::top() {
 
     try {
 
@@ -57,13 +64,15 @@ float stack_t::top() {
 
     }
     catch(const char* err_string){
-        cerr << err_string << endl;
+        std::cerr << err_string << std::endl;
         return 0;
     };
     
 }
 
-void stack_t::pop() {
+template<class T>
+
+void stack_t<T>::pop() {
 
     try{
 
@@ -88,7 +97,6 @@ void stack_t::pop() {
 
     }
     catch (const char* err_string) {
-        cerr << err_string << endl;
+        std::cerr << err_string << std::endl;
     };
 }
-
